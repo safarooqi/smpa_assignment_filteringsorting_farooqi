@@ -98,10 +98,22 @@ housesales %>%
   filter(city == "Dallas", year >= 2010, month == 6) %>%
   arrange(desc(sales))
 
+
 # 9) Now do the same as Question 8, but this time instead of Dallas, show results for Corpus Christi
 
+# problem 9: same as problem 8 with the city of Corpus Christi 
+
+housesales %>%
+  filter(city == "Corpus Christi", year >= 2010, month == 6) %>%
+  arrange(desc(sales))
 
 
 # 10) Finally, using the Corpus Christi code from Question 9, instead of June
 # use the month of February (2) instead.
+
+# problem 10: same as problem 9 with month of February 
+
+housesales %>%
+  filter(city == "Corpus Christi", year >= 2010, month == 2) %>%
+  arrange(desc(sales))
 
