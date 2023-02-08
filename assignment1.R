@@ -24,43 +24,53 @@ View(housesales)
 # 1) The column "year" indicates the year. Filter to return only results from 2015. 
 # (note that because the column is numeric, you wouldn't use quotes as with text when setting your filter value)
 
+# problem 1: filtering from year column to 2015
 
-
+filter(housesales, year == 2015)
 
 
 # 2) Similar to the above question, filter results from 2010 onward, so 2010-2015.
 
+# problem 2: filtering year column to 2010-2015
 
-
+filter(housesales, year >= 2010) 
 
 
 # 3) The "city" column contains the relevant city. Filter to return only results for Houston
 # (note, remember R is case sensitive)
 
+# problem 3: filtering from city column 
 
-
+filter(housesales, city == "Houston")
 
 
 # 4) Filter for only where the city is Houston as above, and now also filter for only 
 # the year 2010. The results should give you 12 records, one for each month in 2010 for Houston.
 
+# problem 4: filtering from city and year columns 
 
-
+filter(housesales, city == "Houston", year == 2010)
 
 
 # 5) Build on what you've done above. Filter for only where the city is Houston as above, 
 # and the year is 2010. Now add a sort using arrange() to sort the results based on the number
 # of home sales (the "sales" column) from most to least.
 
+# problem 5: filtering from city, year, and sales columns 
 
-
-
+housesales %>%
+  filter(city == "Houston", year == 2010) %>%
+  arrange(desc(sales))
+  
 
 # 6) Piggyback on what you've done above. 
 # Do the same as #5, only this time instead of Houston return records for Dallas
 
+# problem 6: replacing Houston records from problem 5 with Dallas 
 
-
+housesales %>%
+  filter(city == "Dallas", year == 2010) %>%
+  arrange(desc(sales))
 
 
 # 7) Sometimes metrics like home sales have a seasonal quality to them, much like 
@@ -75,19 +85,12 @@ View(housesales)
 
 
 
-
 # 8) Build on what we've done above. Now that we have June numbers for Dallas for every year,
 # arrange the results by sales from highest-to-lowest to show what year had the highest June sales.
 
 
 
-
-
-
 # 9) Now do the same as Question 8, but this time instead of Dallas, show results for Corpus Christi
-
-
-
 
 
 
